@@ -5,10 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="510">
-    <Canvas Background="Aqua">
-        <Label Canvas.Left="20" Canvas.Top="20">Label</Label>
-        <TextBox Canvas.Left="40" Canvas.Top="40">Text</TextBox>
-        <Button Canvas.Left="60" Canvas.Top="60">Button</Button>
-    </Canvas>
+        Title="TextEditor" Height="450" Width="600" MinHeight="200" MinWidth="350"
+        BorderThickness="5 0 5 5" BorderBrush="White">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10"></Border>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button ToolTip="Open">
+                    <Image Source="Images/open.ico"></Image>
+                </Button>
+                <Button ToolTip="Clear">
+                    <Image Source="Images/clear.ico"></Image>
+                </Button>
+                <Button ToolTip="Copy">
+                    <Image Source="Images/copy.ico"></Image>
+                </Button>
+                <Button ToolTip="Paste">
+                    <Image Source="Images/paste.ico"></Image>
+                </Button>
+            </StackPanel>
+
+            <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBox Grid.Row="0" Margin="10" VerticalScrollBarVisibility="Visible"></TextBox>
+                    <DockPanel Grid.Row="1">
+                        <Button DockPanel.Dock="Bottom" Margin="10" HorizontalAlignment="Center">OK</Button>
+                    </DockPanel>
+                </Grid>
+            </Border>
+
+        </Grid>
+    </Grid>
 </Window>
