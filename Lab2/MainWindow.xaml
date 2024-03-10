@@ -6,7 +6,24 @@
         xmlns:local="clr-namespace:Lab2"
         mc:Ignorable="d"
         Title="TextEditor" Height="450" Width="600" MinHeight="200" MinWidth="350"
-        BorderThickness="5 0 5 5" BorderBrush="White">
+        BorderThickness="5 0 5 5" BorderBrush="White" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="LinearPanelBrush">
+            <GradientStop Color="Yellow" Offset="0"></GradientStop>
+            <GradientStop Color="DodgerBlue" Offset="0.5"></GradientStop>
+            <GradientStop Color="Yellow" Offset="0.8"></GradientStop>
+        </LinearGradientBrush>
+
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="White"/>
+            </Style.Setters>
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -14,7 +31,9 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10"></Border>
+            <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10"
+                    Background="{StaticResource LinearPanelBrush}">
+            </Border>
             <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
                 <Button ToolTip="Open">
                     <Image Source="Images/open.ico"></Image>
@@ -30,7 +49,8 @@
                 </Button>
             </StackPanel>
 
-            <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+            <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10"
+                    Background="{StaticResource LinearPanelBrush}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -39,7 +59,7 @@
 
                     <TextBox Grid.Row="0" Margin="10" VerticalScrollBarVisibility="Visible"></TextBox>
                     <DockPanel Grid.Row="1">
-                        <Button DockPanel.Dock="Bottom" Margin="10" HorizontalAlignment="Center">OK</Button>
+                        <Button DockPanel.Dock="Bottom" Margin="10" HorizontalAlignment="Center" Style="{x:Null}">OK</Button>
                     </DockPanel>
                 </Grid>
             </Border>
